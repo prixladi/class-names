@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>Utility package for merging css classNames.</Description>
+		<PackageProjectUrl>https://github.com/prixladi/class-names</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/prixladi/class-names</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Authors>Ladislav Prix</Authors>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+</Project>
