@@ -152,7 +152,7 @@ var className = ClassName.New()
 
 ## Tests
 
-Project with unit tests can be found in folder **src/ClassNames.UnitTests**.
+Project with unit tests can be found in folder [**src/ClassNames.UnitTests**](./src/ClassNames.UnitTests).
 
 Tests can be run directly in visual studio or from the command line with the following commands:
 
@@ -161,4 +161,8 @@ cd src/ClassNames.UnitTests
 ./test.ps1
 ```
 
-After that coverage results can be found in folder **src/ClassNames.UnitTests/TestsResults** (**index.html**).
+After that coverage results can be found in folder [**src/ClassNames.UnitTests/TestsResults**](./src/ClassNames.UnitTests/TestsResults) ([**index.html**](src/ClassNames.UnitTests/TestsResults/index.html)).
+
+## Benchmarks
+
+Project with benchamarks can be found in folder [**src/ClassNames.Benchamark**](./src/ClassNames.Benchamark).
