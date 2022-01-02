@@ -6,11 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80132CAB-0FB9-426D-B5D2-6906F7D07B49}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassNames", "src\ClassNames\ClassNames.csproj", "{CC2A8942-3625-4F27-8CDB-CBAA0C5B0E2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassNames.UnitTests", "src\ClassNames.UnitTests\ClassNames.UnitTests.csproj", "{C882BB38-326B-4A98-8F38-6282F9719627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassNames.UnitTests", "src\ClassNames.UnitTests\ClassNames.UnitTests.csproj", "{C882BB38-326B-4A98-8F38-6282F9719627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
