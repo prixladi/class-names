@@ -165,4 +165,4 @@ After that coverage results can be found in folder [**src/ClassNames.UnitTests/T
 
 ## Benchmarks
 
-Project with benchamarks can be found in folder [**src/ClassNames.Benchamark**](./src/ClassNames.Benchamark).
+Project with benchamarks can be found in folder [**src/ClassNames.Benchmark**](./src/ClassNames.Benchmark).
