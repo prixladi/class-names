@@ -3,7 +3,7 @@
 Run benchmarks by running command:
 
 ```bash
-./benchamrk.ps1
+./benchmark.ps1
 ```
 
 ## Results 
