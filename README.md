@@ -1,6 +1,6 @@
 # ClassNames
 
-ClassNames is simple utily for composing css **className**.
+ClassNames is simple utily for composing css **class names**.
 
 ## API
 
