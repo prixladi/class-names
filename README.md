@@ -1,5 +1,9 @@
 # ClassNames
 
+![CI](https://github.com/prixladi/class-names/workflows/CI/badge.svg)
+[![NuGet](https://img.shields.io/nuget/dt/classnames.svg)](https://www.nuget.org/packages/ClassNames/) 
+[![NuGet](https://img.shields.io/nuget/vpre/classnames.svg)](https://www.nuget.org/packages/ClassNames/)
+
 ClassNames is a simple utility for composing **CSS** class names.
 
 ## API
