@@ -48,14 +48,14 @@ var className = ClassName.New("mt-10")
     .Compile();
 ```
 
-1) Merge
+2) Merge
 
 ```csharp
 var className = ClassName.Merge("mt-10", new [] 
-    { 
-        ("underline", current.id == item.id), 
-        ("opacity-50", current.id != item.id)
-    });
+{ 
+    ("underline", current.id == item.id), 
+    ("opacity-50", current.id != item.id)
+});
 ```
 
 ### Objects
@@ -68,23 +68,22 @@ This would be preffered way over tuples but there is no way to create anonymous 
 var className = ClassName.New("mt-10")
     .Add(new 
     { 
-        roundedFull: isCircle,
-        roundedOff: isSquare,
-        hidden: isHiden
+        roundedFull = isCircle,
+        roundedOff = isSquare,
+        hidden = isHiden
     })
     .Compile();
 ```
 
-1) Merge
+2) Merge
 
 ```csharp
-var className = ClassName.Merge("mt-10",
-    .Add(new 
-    { 
-        roundedFull: isCircle,
-        roundedOff: isSquare,
-        hidden: isHiden
-    }));
+var className = ClassName.Merge("mt-10", new 
+{ 
+    roundedFull = isCircle,
+    roundedOff = isSquare,
+    hidden = isHiden
+});
 ```
 
 ### ClassName Combine
@@ -103,12 +102,12 @@ var highlighted = ClassName.New("scale-110")
     .Add("bg-teal", currentUser.id != item.user.id);
 
 var className = ClassName.New()
-    .Add(main);
+    .Add(main)
     .Add(highlighted, shouldHighlight)
     .Compile();
 ```
 
-1) Merge
+2) Merge
 
 ```csharp
 var main = ClassName.New(ClassName.Merge(new [] 
@@ -128,4 +127,25 @@ var highlighted = ClassName.New(ClassName.Merge(
 var className = ClassName.Merge(
     main, new [] {(highlighted.Compile(), shouldHighlight)});
 
+```
+
+### Ternary Builder
+
+This is builder only feature. It is syntax sugar for tertary like conditions for classes. I uses first provided class if predicate is true otherwise returns second provided class.
+
+1) Without ternary
+
+```csharp
+var className = ClassName.New()
+    .Add("disbaled", isDisabled)
+    .Add("bg-red", !isDisabled)
+    .Compose();
+```
+
+2) With ternary
+
+```csharp
+var className = ClassName.New()
+    .Ternary("disbaled", "bg-red", isDisabled)
+    .Compose();
 ```

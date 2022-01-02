@@ -98,6 +98,20 @@ namespace ClassNames.UnitTests
         }
 
         [Fact]
+        public void Compose_ternary_simple()
+        {
+            var cn = ClassName.New()
+                .Ternary("c1", "c2", true)
+                .Ternary("c3", "c4", false)
+                .Ternary(null!, "c5", true)
+                .Ternary("c6", "   ", false);
+
+            var result = cn.Compile();
+
+            Assert.Equal("c1 c4", result);
+        }
+
+        [Fact]
         public void Compose_simple()
         {
             var result = ClassName.New("c1 c2")

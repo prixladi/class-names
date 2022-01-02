@@ -96,6 +96,22 @@ public partial class ClassName
         return this;
     }
 
+
+    /// <summary>
+    /// Ternary like add for classNames.
+    /// Adds first class if predicate is true, adds second class if predicate is false
+    /// </summary>
+    /// <returns>ClassName instance to chain</returns>
+    public ClassName Ternary(string? ifTrue, string? ifFalse, bool predicate)
+    {
+        if(predicate && !string.IsNullOrWhiteSpace(ifTrue))
+            classNames.Add(ifTrue);
+        if(!predicate && !string.IsNullOrWhiteSpace(ifFalse))
+            classNames.Add(ifFalse);
+
+        return this;
+    }
+
     /// <summary>
     /// Compiles classNames together
     /// If nullIfWhiteSpace is set to true, returns null insted of whitespace if classNames composes to whitespace
