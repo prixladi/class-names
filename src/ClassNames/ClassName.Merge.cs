@@ -10,7 +10,9 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(params string?[]? names)
     {
-        if (names == null) return string.Empty;
+        if (names == null)
+            return string.Empty;
+
         return ExtractFromStringEnumerable(names!);
     }
 
@@ -22,7 +24,9 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(IEnumerable<string?>? names)
     {
-        if (names == null) return string.Empty;
+        if (names == null)
+            return string.Empty;
+
         return ExtractFromStringEnumerable(names);
     }
 
@@ -40,7 +44,8 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(params object?[]? objs)
     {
-        if (objs == null) return string.Empty;
+        if (objs == null)
+            return string.Empty;
 
         var names = objs
             .Select(value =>
@@ -71,7 +76,8 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(params ClassName[] cns)
     {
-        if (cns == null) return string.Empty;
+        if (cns == null)
+            return string.Empty;
 
         var names = cns
             .Select(value => value.Compile())
@@ -87,7 +93,9 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(params (string, bool)[] tuples)
     {
-        if (tuples == null) return string.Empty;
+        if (tuples == null)
+            return string.Empty;
+
         return ExtractFromTupleEnumerable(tuples);
     }
 
@@ -98,7 +106,8 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(string className, params ClassName[] cns)
     {
-        if (cns == null) return string.IsNullOrWhiteSpace(className) ? string.Empty : className;
+        if (cns == null)
+            return string.IsNullOrWhiteSpace(className) ? string.Empty : className;
 
         var names = cns
             .Select(value => value.Compile())
@@ -114,7 +123,9 @@ public partial class ClassName
     /// <returns>merged className</returns>
     public static string Merge(string className, params (string, bool)[] tuples)
     {
-        if (tuples == null) return string.IsNullOrWhiteSpace(className) ? string.Empty : className;
+        if (tuples == null)
+            return string.IsNullOrWhiteSpace(className) ? string.Empty : className;
+
         return Merge(className, ExtractFromTupleEnumerable(tuples));
     }
 
@@ -125,7 +136,8 @@ public partial class ClassName
 
     private static string ExtractFromObject(object? obj)
     {
-        if (obj == null) return string.Empty;
+        if (obj == null)
+            return string.Empty;
 
         var type = obj.GetType();
         var names = type.GetProperties()

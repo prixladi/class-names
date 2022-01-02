@@ -2,7 +2,6 @@
 
 namespace ClassNames.Benchmark;
 
-#pragma warning disable CA1822 // Mark members as static
 [MemoryDiagnoser]
 public class Bench
 {
@@ -110,4 +109,3 @@ public class Bench
             .Compile();
     }
 }
-#pragma warning restore CA1822 // Mark members as static

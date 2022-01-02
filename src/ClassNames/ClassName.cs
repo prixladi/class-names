@@ -104,9 +104,9 @@ public partial class ClassName
     /// <returns>ClassName instance to chain</returns>
     public ClassName Ternary(string? ifTrue, string? ifFalse, bool predicate)
     {
-        if(predicate && !string.IsNullOrWhiteSpace(ifTrue))
+        if (predicate && !string.IsNullOrWhiteSpace(ifTrue))
             classNames.Add(ifTrue);
-        if(!predicate && !string.IsNullOrWhiteSpace(ifFalse))
+        if (!predicate && !string.IsNullOrWhiteSpace(ifFalse))
             classNames.Add(ifFalse);
 
         return this;
