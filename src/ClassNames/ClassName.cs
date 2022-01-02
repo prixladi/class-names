@@ -4,7 +4,7 @@
 /// ClassNames builder class
 /// Supports: (isDisabled = true, isFocused = false, clickable = true)
 ///  1) object oriented builder pattern 
-///     ClassName.New("class1 class2").Add("class3", isDisabled).Add("class4", isFocused).Add("class5", clickable).Build();
+///     ClassName.New("class1 class2").Add("class3", isDisabled).Add("class4", isFocused).Add("class5", clickable).Compose();
 ///     -> "class1 class2 class3 class5"
 ///  2) params ready merge pattern           
 ///     ClassName.Merge("class1 class2", new[] {("class3", isDisabled), ("class4", isFocused)}, new[] {("class4", clickable)})
@@ -98,8 +98,8 @@ public partial class ClassName
 
 
     /// <summary>
-    /// Ternary like add for classNames.
-    /// Adds first class if predicate is true, adds second class if predicate is false
+    /// Ternary-like Add for classNames.
+    /// Adds first class if the predicate is true, adds second class if the predicate is false
     /// </summary>
     /// <returns>ClassName instance to chain</returns>
     public ClassName Ternary(string? ifTrue, string? ifFalse, bool predicate)
@@ -114,7 +114,7 @@ public partial class ClassName
 
     /// <summary>
     /// Compiles classNames together
-    /// If nullIfWhiteSpace is set to true, returns null insted of whitespace if classNames composes to whitespace
+    /// If nullIfWhiteSpace is set to true, returns null instead of whitespace if classNames composes to whitespace
     /// </summary>
     /// <returns>ClassName instance to chain</returns>
     public string? Compile(bool nullIfWhiteSpace = false)

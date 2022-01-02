@@ -1,17 +1,17 @@
 # ClassNames
 
-ClassNames is simple utily for composing css **class names**.
+ClassNames is a simple utility for composing **CSS** class names.
 
 ## API
 
-ClassName can be composed using different objects. Each object type has different way how to be converted to class name. Different objects can be used mixed together in one call / method chain.
+ClassName can be composed using different objects. Each object type has a different way how to be converted to a class name. Different objects can be used mixed in one call / method chain.
 
 - **string**: string value or string.Empty if value is null, `"class" -> "class"`
 - **IEnumerable<string>**: items merged together, `["class1", null, '', "class2"] => "class1 class2"`
 - **IEnumerable<(string, bool)>**: First items of tuples whose second items is true, `[("class1", true), ("class2", false)] => "class1"`
 - **object**: all object property names whose value is true or **bool.Parse** returns true, `new { class1 = "true", class2 = false, class3 = true } => "class1 class3"`
 
-Utility supports two different patters:
+Utility supports two different patterns:
 
 - Object builder pattern. 
 
@@ -33,11 +33,11 @@ var className = ClassName.Merge("pl-10 pr-10",
 
 ## Examples
 
-In each example you can see equivalent notations using builder and merge patterns
+In each example, you can see equivalent notations using the builder and merge patterns
 
 ### Strings and (string, bool) tuples
 
-Probably most of the use cases out there. Every use case written using just strings and (string, bool) tuples. Other object just provide some convinience advantages in some cases.
+Probably most of the use cases out there. Every use case is written using just strings and (string, bool) tuples. Other objects just provide some convenience advantages in some cases.
 
 1) Builder
 
@@ -60,7 +60,7 @@ var className = ClassName.Merge("mt-10", new []
 
 ### Objects
 
-This would be preffered way over tuples but there is no way to create anonymous object with property containing dash, eg. `pt-10`. It is real dealbreaker because it is common naming style for css classes. ([Talwind](https://tailwindcss.com/) for example)
+This would be the preferred way over tuples but there is no way to create an anonymous object with property containing dash, eg. `pt-10`. It is a real dealbreaker because it is a common naming style for **CSS** classes. ([Tailwind](https://tailwindcss.com/) for example)
 
 1) Builder
 
@@ -131,7 +131,7 @@ var className = ClassName.Merge(
 
 ### Ternary Builder
 
-This is builder only feature. It is syntax sugar for tertary like conditions for classes. I uses first provided class if predicate is true otherwise returns second provided class.
+This is a builder-only feature. It is syntax sugar for ternary-like conditions for classes. It uses the first provided class if the predicate is true otherwise returns the second provided class.
 
 1) Without ternary
 
@@ -149,3 +149,16 @@ var className = ClassName.New()
     .Ternary("disbaled", "bg-red", isDisabled)
     .Compose();
 ```
+
+## Tests
+
+Project with unit tests can be found in folder **src/ClassNames.UnitTests**.
+
+Tests can be run directly in visual studio or from the command line with the following commands:
+
+```bash
+cd src/ClassNames.UnitTests
+./test.ps1
+```
+
+After that coverage results can be found in folder **src/ClassNames.UnitTests/TestsResults** (**index.html**).
