@@ -135,7 +135,7 @@ var className = ClassName.Merge(
 
 ### Ternary Builder
 
-This is a builder-only feature. It is syntax sugar for ternary-like conditions for classes. It uses the first provided class if the predicate is true otherwise returns the second provided class.
+This is a builder-only feature. It is jus a syntax sugar for ternary-like conditions for classes. It uses the first provided class if the predicate is true otherwise returns the second provided class.
 
 1) Without ternary
 
